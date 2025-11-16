@@ -1,0 +1,23 @@
+{
+  "name": "moodle-plugins-marketplace",
+  "owner": {
+    "name": "Andreas Stöffer"
+  },
+  "plugins": [
+    {
+      "name": "moodle-dev-pro",
+      "source": "./moodle-dev-pro",
+      "description": "Comprehensive Moodle plugin and theme development with Docker multi-version support, accessibility focus, and UX best practices"
+    },
+    {
+      "name": "plugin-forge",
+      "source": "./plugin-forge",
+      "description": "Meta-plugin for creating, validating, and testing Claude Code plugins. Scaffolds plugin structure, generates components, validates manifests, and ensures best practices."
+    },
+    {
+      "name": "server-ops",
+      "source": "./server-ops",
+      "description": "Server administration, Docker automation, monitoring, and DevOps tasks for multi-version Moodle development environment"
+    }
+  ]
+}

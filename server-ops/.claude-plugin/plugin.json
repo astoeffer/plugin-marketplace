@@ -1,0 +1,22 @@
+{
+  "name": "server-ops",
+  "version": "1.0.0",
+  "description": "Server administration, Docker automation, monitoring, and DevOps tasks for multi-version Moodle development environment",
+  "author": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@learnforge.de"
+  },
+  "keywords": [
+    "server-administration",
+    "docker",
+    "monitoring",
+    "automation",
+    "devops",
+    "moodle",
+    "bash-scripting",
+    "system-maintenance"
+  ],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills"
+}

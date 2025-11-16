@@ -1,0 +1,23 @@
+{
+  "name": "plugin-forge",
+  "version": "1.0.0",
+  "description": "Meta-plugin for creating, validating, and testing Claude Code plugins. Scaffolds plugin structure, generates components, validates manifests, and ensures best practices.",
+  "author": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@learnforge.de"
+  },
+  "homepage": "https://github.com/astoeffer/plugin-forge",
+  "repository": "https://github.com/astoeffer/plugin-forge",
+  "license": "MIT",
+  "keywords": [
+    "plugin-development",
+    "scaffolding",
+    "validation",
+    "meta-plugin",
+    "claude-code",
+    "developer-tools"
+  ],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills"
+}
