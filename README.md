@@ -1,273 +1,259 @@
-# Moodle Plugin Marketplace for Claude Code
+# Claude Code Modular Configuration Framework
 
-A curated collection of Claude Code plugins for Moodle development, server administration, and plugin creation.
+Token-efficient, context-specific configuration for learning developers.
 
-## 📦 Available Plugins
+## Architecture
 
-### 1. **moodle-dev-pro** - Comprehensive Moodle Development
-Professional Moodle plugin and theme development with multi-version Docker support, accessibility focus, and UX best practices.
+```
+~/.claude/
+├── CLAUDE.md              ← BASE (minimal, ~30 lines)
+├── contexts/              ← DOMAIN MODULES (load as needed)
+│   ├── moodle-core.md        Moodle coding standards
+│   ├── moodle-ai.md          Moodle AI subsystem (4.5+)
+│   ├── moodle-admin.md       Webservices, reporting
+│   ├── pocketflow.md         AI agent development
+│   ├── accessibility.md      EU accessibility (EN 301 549)
+│   ├── frontend.md           UI/chatbot patterns
+│   └── dgx-h100.md           DGX H100 GPU cluster
+├── plugins/               ← CLAUDE CODE PLUGINS (skills + MCPs)
+│   ├── moodle-dev-pro/       Moodle plugin development
+│   ├── ai-app-dev/           AI application development
+│   └── moodle-admin/         Admin & webservices
+└── project-templates/     ← COPY FOR NEW PROJECTS
+    ├── moodle-plugin/
+    ├── moodle-ai-plugin/
+    ├── pocketflow-chatbot/
+    ├── moodle-admin-tool/
+    └── dgx-h100-app/
+```
 
-**Features:**
-- 🏗️ **Commands**: `/task`, `/implement`, `/git`, `/test`, `/troubleshoot`
-- 🤖 **Agents**: Moodle Architect, Accessibility Specialist (WCAG 2.1 AA), Docker Operations
-- 🎯 **Skills**: PSR-12 Moodle Standards, WCAG Validator
-- 🪝 **Hooks**: Pre-commit validation, auto-formatting, accessibility reminders
-- 📱 **Mobile App Support**: Moodle Mobile app compatibility checking
-- 🔄 **Multi-Version**: Support for Moodle 4.1, 4.5, 5.1 parallel development
+## Quick Start
 
-### 2. **plugin-forge** - Meta-Plugin Development Tool
-Create, validate, and test Claude Code plugins with scaffolding and best practices enforcement.
-
-**Features:**
-- 🏗️ **Commands**: `/plugin-new`, `/plugin-validate`
-- 🤖 **Agents**: Plugin Architect
-- ⚡ **Capabilities**:
-  - Scaffold new plugin structures
-  - Validate plugin.json manifests
-  - Generate commands, agents, and skills templates
-  - Best practices enforcement
-
-### 3. **server-ops** - Server Administration & DevOps
-Server management, Docker automation, monitoring, and DevOps tasks for multi-version Moodle environments.
-
-**Features:**
-- 🏗️ **Commands**: `/monitor`, `/logs`, `/moodle-cache`
-- 🤖 **Agents**: Server Admin
-- 🎯 **Skills**: Defensive Bash scripting
-- 🐳 **Docker**: Multi-container management and troubleshooting
-- 📊 **Monitoring**: System resources, logs, performance
-
----
-
-## 🚀 Installation
-
-### Step 1: Add Marketplace to Claude Code
-
+### 1. Install Base Configuration
 ```bash
-/plugin marketplace add https://github.com/astoeffer/moodle-plugin-marketplace
+# Copy base CLAUDE.md to user config
+cp base/CLAUDE.md ~/.claude/CLAUDE.md
+
+# Copy context modules
+cp -r contexts ~/.claude/contexts
 ```
 
-### Step 2: Install Plugins
+### 2. Configure for Project Type
 
-Install all three plugins:
+**Moodle Plugin:**
+```markdown
+# In ~/.claude/CLAUDE.md, uncomment:
+@contexts/moodle-core.md
+@contexts/accessibility.md
+```
 
+**AI Chatbot:**
+```markdown
+@contexts/pocketflow.md
+@contexts/frontend.md
+@contexts/accessibility.md
+```
+
+**Moodle AI Plugin:**
+```markdown
+@contexts/moodle-core.md
+@contexts/moodle-ai.md
+@contexts/accessibility.md
+```
+
+**DGX H100 AI Application:**
+```markdown
+@contexts/pocketflow.md
+@contexts/dgx-h100.md
+@contexts/accessibility.md
+```
+
+### 3. Install Plugins
 ```bash
-/plugin install moodle-dev-pro@moodle-plugin-marketplace
-/plugin install plugin-forge@moodle-plugin-marketplace
-/plugin install server-ops@moodle-plugin-marketplace
+# In Claude Code:
+/plugin install moodle-dev-pro@astoeffer
+/plugin install ai-app-dev@astoeffer
+/plugin install moodle-admin@astoeffer
 ```
 
-Or install only what you need:
-
+### 4. Copy Base MCP Configuration
 ```bash
-# For Moodle development only
-/plugin install moodle-dev-pro@moodle-plugin-marketplace
-
-# For plugin development only
-/plugin install plugin-forge@moodle-plugin-marketplace
-
-# For server administration only
-/plugin install server-ops@moodle-plugin-marketplace
+# Copy base .mcp.json for Chrome DevTools and core MCPs
+cp base/.mcp.json ~/.claude/.mcp.json
 ```
 
-### Step 3: Restart Claude Code
-
-Exit Claude Code completely and restart to activate the plugins.
-
-### Step 4: Verify Installation
-
+### 5. Configure MCP API Keys
 ```bash
-/plugin
+# Set environment variables for MCP servers
+export CONTEXT7_API_KEY="ctx7sk-..."
+export TAVILY_API_KEY="tvly-dev-..."
 ```
 
-You should see all installed plugins listed.
+## Token Efficiency
 
----
+| Configuration | Tokens (est.) |
+|--------------|---------------|
+| Full CLAUDE.md | ~8,000 |
+| Base only | ~500 |
+| Base + 1 context | ~1,500 |
+| Base + 2 contexts | ~2,500 |
 
-## 📖 Usage Examples
+**Savings**: 60-90% token reduction with modular approach.
 
-### Moodle Development (moodle-dev-pro)
+## Context Modules
 
+| Module | Content | Use When |
+|--------|---------|----------|
+| `moodle-core.md` | PSR-12, Frankenstyle, APIs | Any Moodle plugin |
+| `moodle-ai.md` | AI subsystem, Providers | AI features (4.5+) |
+| `moodle-admin.md` | Webservices, reporting | Admin tools |
+| `pocketflow.md` | Node/Flow patterns | AI agents |
+| `accessibility.md` | WCAG, EN 301 549 | All UI work |
+| `frontend.md` | Chatbot, widgets | Frontend/UI |
+| `dgx-h100.md` | SLURM, Docker, GPUs | GPU cluster work |
+
+## Plugins
+
+### moodle-dev-pro
+- **Skills**: moodle-standards, accessibility-audit, moodle-ai-integration
+- **MCPs**: Context7, Serena
+- **For**: Moodle plugin development
+
+### ai-app-dev
+- **Skills**: pocketflow-patterns, chatbot-integration
+- **MCPs**: Context7, Tavily, Serena
+- **For**: AI application development (including DGX H100)
+
+### moodle-admin
+- **Skills**: webservice-patterns, reporting-analytics
+- **MCPs**: Context7, Serena
+- **For**: Moodle admin tools
+
+## Project Templates
+
+Copy to start new projects:
 ```bash
-# Implement a new feature with PSR-12 compliance
-/implement "Add file picker to activity module settings"
+# Moodle plugin
+cp -r project-templates/moodle-plugin/.claude /path/to/new-project/
 
-# Run comprehensive tests
-/test --phpunit --behat --codechecker
-
-# Troubleshoot an issue
-/troubleshoot "Plugin shows 'Missing from disk' error"
-
-# Manage git workflow
-/git commit "Add multilanguage support"
-
-# Complex task management
-/task "Create web service API for mobile app"
+# AI app on DGX H100
+cp -r project-templates/dgx-h100-app/.claude /path/to/new-project/
 ```
 
-**Using Agents:**
-- "Use Moodle Architect to design a new activity module structure"
-- "Use Accessibility Specialist to audit my template for WCAG 2.1 AA compliance"
-- "Use Docker Operations to troubleshoot PHP-FPM socket issues"
+## Usage Flow
 
-### Plugin Development (plugin-forge)
+```
+1. Start project
+   └── Copy appropriate template to .claude/CLAUDE.md
 
+2. Claude Code loads
+   └── Base CLAUDE.md → @imports active contexts
+
+3. Work on task
+   └── Plugin skills provide domain guidance
+   └── MCP servers enhance capabilities
+
+4. As you grow
+   └── Modify contexts, add/remove @imports
+```
+
+## For Marketplaces
+
+To add plugins to your marketplace:
 ```bash
-# Create a new Claude Code plugin
-/plugin-new my-awesome-plugin
+# Copy entire directory structure to marketplace repo
+cp -r plugins contexts project-templates marketplace.json /path/to/astoeffer/plugin-marketplace/
 
-# Validate plugin structure
-/plugin-validate ./my-plugin
+# The marketplace.json contains full plugin registry
 ```
 
-**Using Agents:**
-- "Use Plugin Architect to design a command structure for my plugin"
+## MCP Server Configuration
 
-### Server Operations (server-ops)
+### Base MCP Servers (always available)
 
+| MCP Server | Purpose | Source |
+|------------|---------|--------|
+| Chrome DevTools | Browser debugging, DOM, network, console, accessibility | `base/.mcp.json` |
+| Context7 | Library documentation lookup | `base/.mcp.json` |
+| Serena | Semantic code analysis, project memory | `base/.mcp.json` |
+
+### Plugin MCP Servers (per plugin)
+
+| MCP Server | Purpose | Plugins |
+|------------|---------|---------|
+| Context7 | Library documentation | All |
+| Tavily | Web search/research | ai-app-dev |
+| Serena | Semantic code analysis | All |
+
+### Chrome DevTools Capabilities
+
+When Chrome is running in debug mode (`--remote-debugging-port=9222`):
+- **DOM Inspection**: Query and modify page elements
+- **Network Analysis**: Monitor requests, responses, timing
+- **Console**: Execute JavaScript, view logs
+- **Performance**: CPU/memory profiling, runtime metrics
+- **Accessibility**: Audit WCAG compliance, ARIA attributes
+
+## Token Budget Strategy
+
+| Context | Budget |
+|---------|--------|
+| Base | 500 |
+| Per module | 800-1,200 |
+| Skills (on demand) | 500-800 |
+| **Max recommended** | 5,000 |
+
+Keep total context under 5K tokens for efficient operation.
+
+## Remote Development (Hetzner/VS Code)
+
+For centralized configuration across multiple remote servers:
+
+1. **Install on each server** (one-time):
 ```bash
-# Monitor system resources
-/monitor
-
-# View logs with filtering
-/logs nginx --tail 100 --follow
-
-# Purge Moodle cache across all versions
-/moodle-cache purge --all
+git clone https://github.com/astoeffer/plugin-marketplace ~/.claude-marketplace
+cp ~/.claude-marketplace/base/CLAUDE.md ~/.claude/CLAUDE.md
+cp ~/.claude-marketplace/base/.mcp.json ~/.claude/.mcp.json
+cp -r ~/.claude-marketplace/contexts ~/.claude/contexts
 ```
 
-**Using Agents:**
-- "Use Server Admin to diagnose why Moodle 4.5 is responding slowly"
-
----
-
-## 🔧 Requirements
-
-- **Claude Code**: Latest version
-- **Moodle Environment** (for moodle-dev-pro):
-  - Docker with multi-version Moodle setup (4.1, 4.5, 5.1)
-  - PHP 8.1-8.3
-  - MariaDB/MySQL
-  - Nginx or Apache
-
----
-
-## 🎯 Use Cases
-
-### For Moodle Plugin Developers
-✅ **moodle-dev-pro** + **plugin-forge**
-- Develop plugins with PSR-12 compliance
-- Test across multiple Moodle versions
-- Ensure WCAG 2.1 AA accessibility
-- Create additional Claude Code plugins for your workflow
-
-### For Moodle Theme Developers
-✅ **moodle-dev-pro**
-- Build accessible themes
-- Test responsive designs
-- Validate mobile app compatibility
-- Enforce UX best practices
-
-### For DevOps/System Administrators
-✅ **server-ops** + **moodle-dev-pro**
-- Manage multi-version Moodle instances
-- Monitor server resources
-- Troubleshoot Docker containers
-- Automate deployment tasks
-
-### For Claude Code Plugin Developers
-✅ **plugin-forge**
-- Create new plugins with proper structure
-- Validate manifests and configurations
-- Follow Claude Code best practices
-
----
-
-## 📚 Documentation
-
-Each plugin includes comprehensive documentation:
-
-- **moodle-dev-pro**: `/opt/moodle-dev/moodle-plugins-marketplace/moodle-dev-pro/README.md`
-- **plugin-forge**: `/opt/moodle-dev/moodle-plugins-marketplace/plugin-forge/README.md`
-- **server-ops**: `/opt/moodle-dev/moodle-plugins-marketplace/server-ops/README.md`
-
----
-
-## 🤝 Contributing
-
-### Reporting Issues
-Open an issue on GitHub: https://github.com/astoeffer/moodle-plugin-marketplace/issues
-
-### Contributing Plugins
-1. Fork this repository
-2. Add your plugin to the appropriate directory
-3. Update `.claude-plugin/marketplace.json`
-4. Submit a pull request
-
-### Plugin Structure Requirements
-```
-your-plugin/
-├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── commands/               # Optional: Command definitions
-│   └── *.md
-├── agents/                 # Optional: Agent definitions
-│   └── *.md
-├── skills/                 # Optional: Skill definitions
-│   └── */SKILL.md
-├── hooks/                  # Optional: Hooks configuration
-│   └── hooks.json
-└── README.md              # Plugin documentation
+2. **Configure Claude Code settings** (`~/.claude/settings.json`):
+```json
+{
+  "extraKnownMarketplaces": [
+    "https://github.com/astoeffer/plugin-marketplace.git"
+  ],
+  "enabledPlugins": ["moodle-dev-pro@astoeffer", "ai-app-dev@astoeffer"]
+}
 ```
 
----
+3. **Set API keys** (in `.bashrc` or `.zshrc`):
+```bash
+export CONTEXT7_API_KEY="ctx7sk-..."
+export TAVILY_API_KEY="tvly-dev-..."
+```
 
-## 📄 License
+## DGX H100 Development
 
-MIT License - See [LICENSE](LICENSE) file for details
+For GPU-accelerated development on the DGX H100 cluster:
 
----
+1. **Use the dgx-h100-app template**:
+```bash
+cp -r project-templates/dgx-h100-app/.claude /path/to/project/
+```
 
-## 👤 Author
+2. **Configure SSH** (`~/.ssh/config`):
+```
+Host deep-thought
+    HostName 141.31.112.54
+    IdentityFile ~/.ssh/your-key
+    User your-username
+```
 
-**Andreas Stöffer**
-- Email: andreas@learnforge.de
-- GitHub: [@astoeffer](https://github.com/astoeffer)
+3. **Connect with VS Code Remote SSH**
 
----
-
-## 🙏 Acknowledgments
-
-Built with [Claude Code](https://claude.com/claude-code) by Anthropic
-
----
-
-## 🔗 Links
-
-- **Repository**: https://github.com/astoeffer/moodle-plugin-marketplace
-- **Issues**: https://github.com/astoeffer/moodle-plugin-marketplace/issues
-- **Claude Code Documentation**: https://docs.claude.com/claude-code
-
----
-
-## 📊 Plugin Overview
-
-| Plugin | Commands | Agents | Skills | Hooks | Size |
-|--------|----------|--------|--------|-------|------|
-| **moodle-dev-pro** | 6 | 3 | 2 | ✓ | Large |
-| **plugin-forge** | 2 | 1 | 0 | ✗ | Small |
-| **server-ops** | 3 | 1 | 1 | ✗ | Small |
-
----
-
-## 🚦 Version Compatibility
-
-| Plugin | Claude Code | Status |
-|--------|-------------|--------|
-| moodle-dev-pro v1.0.0 | Latest | ✅ Stable |
-| plugin-forge v1.0.0 | Latest | ✅ Stable |
-| server-ops v1.0.0 | Latest | ✅ Stable |
-
----
-
-**Happy Coding! 🚀**
+4. **Use SLURM for GPU jobs**:
+```bash
+sbatch job.sh  # Submit job
+squeue -u $USER  # Check status
+```
