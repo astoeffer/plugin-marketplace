@@ -1,37 +1,8 @@
 {
   "name": "cloodle-design-system",
+  "description": "UX/design agents for coaching and psychodrama platforms",
   "version": "1.0.0",
-  "description": "Expert design agents for Cloodle - a learning platform for psychodrama coaching, supervision, and therapeutic-adjacent professional development",
-  "author": "Andreas Stöffer",
-  "contexts": ["psychodrama", "coaching", "gestalt-psychology", "embodiment"],
-  "keywords": [
-    "design-system",
-    "ux-ui",
-    "gestalt-psychology",
-    "visual-perception",
-    "coaching-platforms",
-    "therapeutic-design",
-    "seth-godin",
-    "tribe-marketing",
-    "embodiment",
-    "psychodrama",
-    "learning-experience"
-  ],
-  "agents": [
-    "ux-therapeutic-designer",
-    "gestalt-perception-expert",
-    "godin-marketing-strategist",
-    "interaction-designer-coaching",
-    "design-orchestrator"
-  ],
-  "mcpServers": {
-    "21st-magic": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-21st-dev-magic"]
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-sequential-thinking"]
-    }
+  "author": {
+    "name": "Andreas Stoeffer"
   }
 }

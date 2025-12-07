@@ -1,0 +1,8 @@
+{
+  "name": "cloodle-content-native",
+  "description": "H5P patterns and Kirby-to-book content export",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andreas Stoeffer"
+  }
+}

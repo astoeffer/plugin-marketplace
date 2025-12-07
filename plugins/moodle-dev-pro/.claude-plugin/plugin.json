@@ -1,21 +1,8 @@
 {
   "name": "moodle-dev-pro",
-  "version": "2.0.0",
   "description": "Moodle plugin development with PSR-12, accessibility, and AI subsystem support",
-  "author": "Andreas Stöffer",
-  "contexts": ["moodle-core", "moodle-ai", "accessibility"],
-  "keywords": ["moodle", "php", "lms", "accessibility", "ai"],
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "env": {
-        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
-      }
-    },
-    "serena": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant"]
-    }
+  "version": "1.0.0",
+  "author": {
+    "name": "Andreas Stoeffer"
   }
 }

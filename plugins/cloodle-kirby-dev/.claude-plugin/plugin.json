@@ -1,0 +1,8 @@
+{
+  "name": "cloodle-kirby-dev",
+  "description": "Kirby CMS development with Zero One theme patterns and UIkit integration",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andreas Stoeffer"
+  }
+}
