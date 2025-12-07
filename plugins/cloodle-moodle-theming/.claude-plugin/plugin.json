@@ -1,8 +1,0 @@
-{
-  "name": "cloodle-moodle-theming",
-  "description": "Boost Union theme configuration and design tokens for Moodle",
-  "version": "1.0.0",
-  "author": {
-    "name": "Andreas Stoeffer"
-  }
-}

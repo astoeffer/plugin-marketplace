@@ -1,8 +1,0 @@
-{
-  "name": "moodle-dev-pro",
-  "description": "Moodle plugin development with PSR-12, accessibility, and AI subsystem support",
-  "version": "1.0.0",
-  "author": {
-    "name": "Andreas Stoeffer"
-  }
-}

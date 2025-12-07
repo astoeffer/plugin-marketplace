@@ -1,8 +1,0 @@
-{
-  "name": "moodle-admin",
-  "description": "Moodle administration, webservices, reporting, and analytics",
-  "version": "1.0.0",
-  "author": {
-    "name": "Andreas Stoeffer"
-  }
-}

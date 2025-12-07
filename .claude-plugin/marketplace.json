@@ -1,48 +1,43 @@
 {
   "name": "astoeffer-plugins",
   "owner": {
-    "name": "Andreas Stoeffer"
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "metadata": {
+    "description": "Plugins for Cloodle platform and Moodle development",
+    "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "cloodle-design-system",
       "source": "./plugins/cloodle-design-system",
-      "description": "UX/design agents for coaching and psychodrama platforms"
+      "description": "UX/design agents and skills for coaching and psychodrama platforms",
+      "strict": false,
+      "skills": [
+        "./skills/design-tokens"
+      ]
     },
     {
       "name": "cloodle-kirby-dev",
       "source": "./plugins/cloodle-kirby-dev",
-      "description": "Kirby CMS development patterns"
-    },
-    {
-      "name": "cloodle-moodle-theming",
-      "source": "./plugins/cloodle-moodle-theming",
-      "description": "Boost Union theme configuration for Moodle"
-    },
-    {
-      "name": "cloodle-ai-integration",
-      "source": "./plugins/cloodle-ai-integration",
-      "description": "AI gateway, RAG, and chatbot integration"
-    },
-    {
-      "name": "cloodle-content-native",
-      "source": "./plugins/cloodle-content-native",
-      "description": "H5P patterns and content export"
+      "description": "Kirby CMS development patterns and Zero One theme",
+      "strict": false,
+      "skills": [
+        "./skills/kirby-core",
+        "./skills/zero-one-patterns"
+      ]
     },
     {
       "name": "moodle-dev-pro",
       "source": "./plugins/moodle-dev-pro",
-      "description": "Moodle plugin development with PSR-12 and accessibility"
-    },
-    {
-      "name": "moodle-admin",
-      "source": "./plugins/moodle-admin",
-      "description": "Moodle administration, webservices, and reporting"
-    },
-    {
-      "name": "ai-app-dev",
-      "source": "./plugins/ai-app-dev",
-      "description": "AI application development with PocketFlow"
+      "description": "Moodle plugin development with PSR-12 and accessibility",
+      "strict": false,
+      "skills": [
+        "./skills/moodle-standards",
+        "./skills/accessibility-audit",
+        "./skills/moodle-ai-integration"
+      ]
     }
   ]
 }
