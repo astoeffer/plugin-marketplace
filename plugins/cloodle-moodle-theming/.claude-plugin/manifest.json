@@ -1,0 +1,17 @@
+{
+  "name": "cloodle-moodle-theming",
+  "version": "1.0.0",
+  "description": "Boost Union child theme development with Zero One design token mapping for Cloodle platform",
+  "author": "Cloodle Team",
+  "contexts": ["boost-union", "design-tokens", "moodle-theming"],
+  "keywords": ["moodle", "boost-union", "theming", "scss", "bootstrap", "uikit", "zero-one"],
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+      }
+    }
+  }
+}

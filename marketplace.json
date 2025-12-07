@@ -1,0 +1,130 @@
+{
+  "$schema": "https://schemas.claude.ai/marketplace/v1/schema.json",
+  "name": "astoeffer-dev-plugins",
+  "description": "Development plugins for Moodle, AI applications, and GPU cluster development",
+  "author": "Andreas Stöffer",
+  "repository": "https://github.com/astoeffer/plugin-marketplace",
+  "baseMcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/chrome-devtools-mcp"],
+      "description": "Chrome DevTools debugging - DOM, network, console, performance, accessibility"
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+      },
+      "description": "Library documentation lookup"
+    },
+    "serena": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant"],
+      "description": "Semantic code analysis and project memory"
+    }
+  },
+  "plugins": [
+    {
+      "name": "moodle-dev-pro",
+      "version": "2.0.0",
+      "description": "Moodle plugin development with PSR-12, accessibility, and AI subsystem support",
+      "path": "plugins/moodle-dev-pro",
+      "keywords": ["moodle", "php", "lms", "accessibility", "ai"],
+      "contexts": ["moodle-core", "moodle-ai", "accessibility"],
+      "skills": [
+        "moodle-standards",
+        "accessibility-audit",
+        "moodle-ai-integration"
+      ]
+    },
+    {
+      "name": "ai-app-dev",
+      "version": "1.0.0",
+      "description": "AI application development with PocketFlow, LLM integration, and agent patterns",
+      "path": "plugins/ai-app-dev",
+      "keywords": ["ai", "llm", "agents", "pocketflow", "python", "chatbot", "gpu"],
+      "contexts": ["pocketflow", "frontend", "dgx-h100"],
+      "skills": [
+        "pocketflow-patterns",
+        "chatbot-integration"
+      ]
+    },
+    {
+      "name": "moodle-admin",
+      "version": "1.0.0",
+      "description": "Moodle administration, webservices, reporting, and analytics",
+      "path": "plugins/moodle-admin",
+      "keywords": ["moodle", "admin", "webservices", "reporting", "analytics"],
+      "contexts": ["moodle-core", "moodle-admin"],
+      "skills": [
+        "webservice-patterns",
+        "reporting-analytics"
+      ]
+    }
+  ],
+  "contexts": {
+    "moodle-core": {
+      "description": "Moodle coding standards (PSR-12 with exceptions), Frankenstyle, Core APIs",
+      "path": "contexts/moodle-core.md",
+      "tokens": 1200
+    },
+    "moodle-ai": {
+      "description": "Moodle AI Subsystem (4.5+): Actions, Providers, Placements",
+      "path": "contexts/moodle-ai.md",
+      "tokens": 1000
+    },
+    "moodle-admin": {
+      "description": "Webservices, reporting, scheduled tasks",
+      "path": "contexts/moodle-admin.md",
+      "tokens": 800
+    },
+    "pocketflow": {
+      "description": "PocketFlow LLM framework: Nodes, Flows, Agent patterns",
+      "path": "contexts/pocketflow.md",
+      "tokens": 1000
+    },
+    "accessibility": {
+      "description": "EU accessibility (EN 301 549, WCAG 2.1 AA)",
+      "path": "contexts/accessibility.md",
+      "tokens": 800
+    },
+    "frontend": {
+      "description": "Chatbot widgets, iframe integration, UI patterns",
+      "path": "contexts/frontend.md",
+      "tokens": 600
+    },
+    "dgx-h100": {
+      "description": "DGX H100 GPU cluster, SLURM, Docker patterns",
+      "path": "contexts/dgx-h100.md",
+      "tokens": 1200
+    }
+  },
+  "projectTemplates": [
+    {
+      "name": "moodle-plugin",
+      "description": "Standard Moodle plugin with PSR-12 and accessibility",
+      "path": "project-templates/moodle-plugin"
+    },
+    {
+      "name": "moodle-ai-plugin",
+      "description": "Moodle plugin with AI Subsystem integration (4.5+)",
+      "path": "project-templates/moodle-ai-plugin"
+    },
+    {
+      "name": "pocketflow-chatbot",
+      "description": "PocketFlow chatbot with Moodle integration",
+      "path": "project-templates/pocketflow-chatbot"
+    },
+    {
+      "name": "moodle-admin-tool",
+      "description": "Moodle admin tool with webservices and reporting",
+      "path": "project-templates/moodle-admin-tool"
+    },
+    {
+      "name": "dgx-h100-app",
+      "description": "GPU-accelerated AI application for DGX H100",
+      "path": "project-templates/dgx-h100-app"
+    }
+  ]
+}
