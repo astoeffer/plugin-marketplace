@@ -72,6 +72,16 @@
       "keywords": ["plugin", "scaffolding", "validation", "development"],
       "agents": ["plugin-architect"],
       "commands": ["plugin-new", "plugin-validate"]
+    },
+    {
+      "name": "plugin-dev",
+      "version": "1.0.0",
+      "description": "Comprehensive toolkit for creating, validating, and managing Claude Code plugins",
+      "path": "plugins/plugin-dev",
+      "keywords": ["plugin", "development", "scaffolding", "validation", "testing", "marketplace"],
+      "agents": ["plugin-architect", "component-generator"],
+      "commands": ["scaffold", "validate", "test", "publish"],
+      "skills": ["plugin-validator"]
     }
   ],
   "contexts": {
