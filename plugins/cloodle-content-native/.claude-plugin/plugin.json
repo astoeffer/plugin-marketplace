@@ -1,0 +1,11 @@
+{
+  "name": "cloodle-content-native",
+  "version": "1.0.0",
+  "description": "Native content management with Kirby to Book and H5P patterns",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["content", "h5p", "kirby", "book"]
+}

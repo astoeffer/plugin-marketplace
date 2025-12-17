@@ -13,31 +13,57 @@
       "name": "cloodle-design-system",
       "source": "./plugins/cloodle-design-system",
       "description": "UX/design agents and skills for coaching and psychodrama platforms",
-      "strict": false,
-      "skills": [
-        "./skills/design-tokens"
-      ]
+      "version": "1.0.0",
+      "strict": false
     },
     {
       "name": "cloodle-kirby-dev",
       "source": "./plugins/cloodle-kirby-dev",
       "description": "Kirby CMS development patterns and Zero One theme",
-      "strict": false,
-      "skills": [
-        "./skills/kirby-core",
-        "./skills/zero-one-patterns"
-      ]
+      "version": "1.0.0",
+      "strict": false
+    },
+    {
+      "name": "cloodle-moodle-theming",
+      "source": "./plugins/cloodle-moodle-theming",
+      "description": "Moodle Boost Union theming for Cloodle platform",
+      "version": "1.0.0",
+      "strict": false
+    },
+    {
+      "name": "cloodle-content-native",
+      "source": "./plugins/cloodle-content-native",
+      "description": "Native content management with Kirby to Book and H5P patterns",
+      "version": "1.0.0",
+      "strict": false
+    },
+    {
+      "name": "cloodle-ai-integration",
+      "source": "./plugins/cloodle-ai-integration",
+      "description": "AI integration with Weaviate RAG and chatbot widgets",
+      "version": "1.0.0",
+      "strict": false
     },
     {
       "name": "moodle-dev-pro",
       "source": "./plugins/moodle-dev-pro",
       "description": "Moodle plugin development with PSR-12 and accessibility",
-      "strict": false,
-      "skills": [
-        "./skills/moodle-standards",
-        "./skills/accessibility-audit",
-        "./skills/moodle-ai-integration"
-      ]
+      "version": "1.0.0",
+      "strict": false
+    },
+    {
+      "name": "moodle-admin",
+      "source": "./plugins/moodle-admin",
+      "description": "Moodle admin tools, webservices, and reporting",
+      "version": "1.0.0",
+      "strict": false
+    },
+    {
+      "name": "ai-app-dev",
+      "source": "./plugins/ai-app-dev",
+      "description": "AI application development with PocketFlow patterns",
+      "version": "1.0.0",
+      "strict": false
     }
   ]
 }

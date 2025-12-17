@@ -1,0 +1,11 @@
+{
+  "name": "cloodle-design-system",
+  "version": "1.0.0",
+  "description": "UX/design agents and skills for coaching and psychodrama platforms",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["ux", "design", "coaching", "psychodrama", "gestalt"]
+}

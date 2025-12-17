@@ -1,0 +1,11 @@
+{
+  "name": "moodle-dev-pro",
+  "version": "1.0.0",
+  "description": "Moodle plugin development with PSR-12 and accessibility",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["moodle", "plugin", "psr-12", "accessibility", "wcag"]
+}

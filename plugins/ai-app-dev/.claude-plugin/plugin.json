@@ -1,0 +1,11 @@
+{
+  "name": "ai-app-dev",
+  "version": "1.0.0",
+  "description": "AI application development with PocketFlow patterns",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["ai", "pocketflow", "chatbot", "llm"]
+}

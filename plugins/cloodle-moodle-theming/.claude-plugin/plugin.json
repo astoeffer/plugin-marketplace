@@ -1,0 +1,11 @@
+{
+  "name": "cloodle-moodle-theming",
+  "version": "1.0.0",
+  "description": "Moodle Boost Union theming for Cloodle platform",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["moodle", "theme", "boost-union", "cloodle"]
+}

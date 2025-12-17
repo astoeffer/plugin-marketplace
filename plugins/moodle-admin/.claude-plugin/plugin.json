@@ -1,0 +1,11 @@
+{
+  "name": "moodle-admin",
+  "version": "1.0.0",
+  "description": "Moodle admin tools, webservices, and reporting",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["moodle", "admin", "webservice", "reporting"]
+}

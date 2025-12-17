@@ -1,0 +1,11 @@
+{
+  "name": "cloodle-kirby-dev",
+  "version": "1.0.0",
+  "description": "Kirby CMS development patterns and Zero One theme",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["kirby", "cms", "zero-one", "theme"]
+}
