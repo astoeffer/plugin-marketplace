@@ -1,12 +1,11 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "astoeffer-plugins",
+  "version": "1.0.0",
+  "description": "Plugins for Cloodle platform and Moodle development",
   "owner": {
     "name": "Andreas Stoeffer",
     "email": "andreas@stoeffer.de"
-  },
-  "metadata": {
-    "description": "Plugins for Cloodle platform and Moodle development",
-    "version": "1.0.0"
   },
   "plugins": [
     {
