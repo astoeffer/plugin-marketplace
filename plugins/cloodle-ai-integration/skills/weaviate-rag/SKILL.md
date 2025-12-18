@@ -1,3 +1,9 @@
+---
+name: weaviate-rag
+description: Implement RAG systems using Weaviate vector database. Use when building semantic search, document retrieval, or knowledge base systems.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Weaviate RAG Configuration Skill
 
 Configure MoodleNRW RAG system with Weaviate vector store.

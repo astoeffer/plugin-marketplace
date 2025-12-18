@@ -1,3 +1,9 @@
+---
+name: ai-gateway
+description: Build AI gateway services for routing and managing LLM requests. Use when implementing API proxies, rate limiting, or multi-provider AI services.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # AI Gateway Provider Switching Skill
 
 Multi-provider AI configuration for Cloodle platform.

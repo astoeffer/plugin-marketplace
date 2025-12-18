@@ -1,8 +1,10 @@
 {
   "mcpServers": {
     "chrome-devtools": {
+      "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@anthropic/chrome-devtools-mcp"],
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "env": {},
       "description": "Chrome DevTools debugging - DOM inspection, network analysis, console, performance"
     },
     "context7": {

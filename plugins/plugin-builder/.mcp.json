@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "plugin-validator": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"],
+      "description": "Plugin structure validation and generation tools for Claude Code plugin development"
+    }
+  }
+}

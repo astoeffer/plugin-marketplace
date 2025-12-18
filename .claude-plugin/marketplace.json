@@ -63,6 +63,14 @@
       "description": "AI application development with PocketFlow patterns",
       "version": "1.0.0",
       "strict": false
+    },
+    {
+      "name": "plugin-builder",
+      "source": "./plugins/plugin-builder",
+      "description": "Claude Code plugin development helper - validates structure, generates manifests, creates skills/commands/agents",
+      "version": "1.0.0",
+      "keywords": ["plugin", "development", "validation", "scaffolding"],
+      "strict": true
     }
   ]
 }

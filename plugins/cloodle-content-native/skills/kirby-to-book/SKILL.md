@@ -1,3 +1,9 @@
+---
+name: kirby-to-book
+description: Convert Kirby CMS content to book/document formats. Use when generating PDFs, ebooks, or structured documents from CMS content.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Kirby to Moodle Book Skill
 
 Export Kirby content as native Moodle Book chapters.

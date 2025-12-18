@@ -1,3 +1,9 @@
+---
+name: chatbot-widget
+description: Build embeddable chatbot widgets for web applications. Use when creating chat UIs, iframe embeds, or widget-based AI interfaces.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Chatbot Widget Theming Skill
 
 Style AI chatbot to match Cloodle design system.

@@ -1,3 +1,9 @@
+---
+name: h5p-patterns
+description: Create interactive H5P content for Moodle and web platforms. Use when building interactive exercises, quizzes, or multimedia learning content.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # H5P Integration Skill
 
 Embed and style H5P interactive content in Cloodle.

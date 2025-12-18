@@ -1,3 +1,9 @@
+---
+name: boost-union-config
+description: Configure Moodle Boost Union theme settings and customizations. Use when theming Moodle, configuring layouts, or customizing Boost Union features.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Boost Union Configuration Skill
 
 Configure Boost Union theme settings and grandchild theme development.

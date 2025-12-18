@@ -1,3 +1,9 @@
+---
+name: design-tokens
+description: Manage design tokens for consistent theming across platforms. Use when defining colors, typography, spacing, or other design system values.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Design Tokens Skill
 
 Zero One (UIkit) to Bootstrap 5 design token mapping.

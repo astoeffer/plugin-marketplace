@@ -1,3 +1,9 @@
+---
+name: reporting-analytics
+description: Build reports and analytics using Moodle's Report Builder and Analytics APIs. Use when creating custom reports, building analytics dashboards, or implementing data analysis features in Moodle.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Reporting & Analytics Skill
 
 Build reports and analytics using Moodle's Report Builder and Analytics APIs.
@@ -241,15 +247,6 @@ class login_frequency extends binary {
 }
 ```
 
-### Register Indicator
-```php
-// classes/analytics/indicator/login_frequency.php
-// Add to db/analytics.php if needed
-$indicators = [
-    '\local_myplugin\analytics\indicator\login_frequency',
-];
-```
-
 ## Scheduled Reports
 
 ```php
@@ -276,46 +273,6 @@ class generate_report extends \core\task\scheduled_task {
         }
 
         mtrace('Report complete.');
-    }
-
-    private function store_stats(int $courseid, array $stats): void {
-        global $DB;
-
-        $record = new \stdClass();
-        $record->courseid = $courseid;
-        $record->data = json_encode($stats);
-        $record->timecreated = time();
-
-        $DB->insert_record('local_myplugin_reports', $record);
-    }
-}
-```
-
-## Dashboard Widget
-
-```php
-// classes/output/dashboard_widget.php
-namespace local_myplugin\output;
-
-use renderable;
-use templatable;
-use renderer_base;
-
-class dashboard_widget implements renderable, templatable {
-
-    private array $stats;
-
-    public function __construct(array $stats) {
-        $this->stats = $stats;
-    }
-
-    public function export_for_template(renderer_base $output): array {
-        return [
-            'total_users' => $this->stats['users'],
-            'active_today' => $this->stats['active'],
-            'completion_rate' => round($this->stats['completion'] * 100, 1),
-            'chart_data' => json_encode($this->stats['trend']),
-        ];
     }
 }
 ```

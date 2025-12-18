@@ -1,3 +1,9 @@
+---
+name: webservice-patterns
+description: Create and consume Moodle webservices for external integration. Use when building external API endpoints, creating integrations with external systems, or implementing webservice functionality in Moodle plugins.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Webservice Patterns Skill
 
 Create and consume Moodle webservices for external integration.

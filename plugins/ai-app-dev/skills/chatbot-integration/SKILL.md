@@ -1,3 +1,9 @@
+---
+name: chatbot-integration
+description: Build chatbot backends that integrate with Moodle and web frontends. Use when building chat widgets, AI integrations, or conversational interfaces.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # Chatbot Integration Skill
 
 Build chatbot backends that integrate with Moodle and web frontends.

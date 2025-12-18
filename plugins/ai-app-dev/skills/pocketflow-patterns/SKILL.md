@@ -1,3 +1,9 @@
+---
+name: pocketflow-patterns
+description: Build AI applications using PocketFlow's Graph + Shared Store architecture. Use when creating AI agents, workflows, chatbot backends, RAG systems, or LLM integrations.
+allowed-tools: Read, Write, Grep, Glob
+---
+
 # PocketFlow Patterns Skill
 
 Build AI applications using PocketFlow's Graph + Shared Store architecture.

@@ -1,0 +1,13 @@
+{
+  "name": "plugin-builder",
+  "version": "1.0.0",
+  "description": "Claude Code plugin development helper - validates structure, generates manifests, creates skills/commands/agents with correct formatting",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  },
+  "license": "MIT",
+  "keywords": ["plugin", "development", "validation", "scaffolding", "generator"],
+  "repository": "https://github.com/astoeffer/claude-code-plugins",
+  "homepage": "https://github.com/astoeffer/claude-code-plugins#plugin-builder"
+}
