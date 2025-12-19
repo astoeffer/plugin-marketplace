@@ -1,60 +1,28 @@
 {
-  "PreToolUse": [
-    {
-      "matcher": "Bash(git commit:*)",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Pre-commit validation: Check for code standards violations\n\necho \"🔍 Running pre-commit checks...\"\n\n# Check if we're in a Moodle plugin directory\nif [ -f \"version.php\" ]; then\n  # Run PHP CodeSniffer if available\n  if command -v vendor/bin/phpcs &> /dev/null; then\n    echo \"  → Running PSR-12/Moodle code standards check...\"\n    vendor/bin/phpcs --standard=moodle . --extensions=php || {\n      echo \"❌ Code standards violations detected!\"\n      echo \"Fix with: vendor/bin/phpcbf --standard=moodle .\"\n      exit 2  # Block commit\n    }\n    echo \"  ✓ Code standards: PASSED\"\n  fi\n\n  # Check for common accessibility issues in templates\n  if [ -d \"templates\" ]; then\n    echo \"  → Checking templates for accessibility issues...\"\n    issues=0\n    \n    # Check for images without alt\n    if grep -r \"<img\" templates/ | grep -v \"alt=\" | grep -v \"alt=\\\"\\\"\" > /dev/null; then\n      echo \"  ⚠️  Images without alt text found in templates\"\n      grep -rn \"<img\" templates/ | grep -v \"alt=\"\n      issues=$((issues + 1))\n    fi\n    \n    # Check for inputs without labels\n    if grep -r \"<input\" templates/ | grep -v \"type=\\\"hidden\\\"\" | grep -v \"aria-label\" > /dev/null; then\n      # This is just a warning, not blocking\n      echo \"  ⚠️  Potential unlabeled inputs in templates (verify manually)\"\n    fi\n    \n    if [ $issues -gt 0 ]; then\n      echo \"  ⚠️  Accessibility warnings (non-blocking, please review)\"\n    else\n      echo \"  ✓ Accessibility check: PASSED\"\n    fi\n  fi\n\n  # Check for debugging code\n  echo \"  → Checking for debugging code...\"\n  if grep -r \"var_dump\\|print_r\\|console\\.log\" --include=\"*.php\" --include=\"*.js\" . > /dev/null; then\n    echo \"  ⚠️  Debugging statements found (please remove):\"\n    grep -rn \"var_dump\\|print_r\\|console\\.log\" --include=\"*.php\" --include=\"*.js\" .\n    echo \"  This is a warning only, commit allowed.\"\n  else\n    echo \"  ✓ No debugging code found\"\n  fi\nfi\n\necho \"✅ Pre-commit checks completed\"\nexit 0  # Allow commit\n",
-          "timeout": 60000
-        }
-      ]
-    }
-  ],
-  "PostToolUse": [
-    {
-      "matcher": "Write(*)",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Post-write: Auto-format PHP files\n\nFILE=\"$1\"\n\n# Only process PHP files in Moodle plugins\nif [[ \"$FILE\" == *.php ]] && [[ \"$FILE\" == */mod/* || \"$FILE\" == */local/* || \"$FILE\" == */block/* ]]; then\n  if command -v vendor/bin/phpcbf &> /dev/null; then\n    echo \"📝 Auto-formatting $FILE with Moodle standards...\"\n    vendor/bin/phpcbf --standard=moodle \"$FILE\" 2>/dev/null || true\n  fi\nfi\n\nexit 0\n",
-          "timeout": 30000
-        }
-      ]
-    },
-    {
-      "matcher": "Edit(*)",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Post-edit: Auto-format PHP files\n\nFILE=\"$1\"\n\n# Only process PHP files in Moodle plugins\nif [[ \"$FILE\" == *.php ]] && [[ \"$FILE\" == */mod/* || \"$FILE\" == */local/* || \"$FILE\" == */block/* ]]; then\n  if command -v vendor/bin/phpcbf &> /dev/null; then\n    echo \"📝 Auto-formatting $FILE with Moodle standards...\"\n    vendor/bin/phpcbf --standard=moodle \"$FILE\" 2>/dev/null || true\n  fi\nfi\n\nexit 0\n",
-          "timeout": 30000
-        }
-      ]
-    }
-  ],
-  "SessionStart": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Session start: Load Moodle development context\n\necho \"🚀 Moodle Dev Pro Plugin Active\"\necho \"\"\necho \"Multi-version Environment:\"\necho \"  • Moodle 4.1 (PHP 8.1): https://moodle41.learnforge.de\"\necho \"  • Moodle 4.5 (PHP 8.2): https://moodle45.learnforge.de\"\necho \"  • Moodle 5.1 (PHP 8.3): https://moodle51.learnforge.de\"\necho \"\"\necho \"Available Commands:\"\necho \"  /m:implement - Feature implementation with PSR-12 compliance\"\necho \"  /m:troubleshoot - Issue diagnosis with GitHub integration\"\necho \"  /m:git - Git workflow with Moodle conventions\"\necho \"  /m:task - Complex task management\"\necho \"  /m:test - PHPUnit, Behat, code standards testing\"\necho \"\"\necho \"Specialized Agents:\"\necho \"  • Moodle Architect - Plugin design & architecture\"\necho \"  • Accessibility Specialist - WCAG 2.1 AA compliance\"\necho \"  • Docker Ops - Multi-version management\"\necho \"\"\necho \"Auto-Activated Skills:\"\necho \"  • PSR-12 Moodle - Code standards validation\"\necho \"  • WCAG Validator - Accessibility checking\"\necho \"\"\n\nexit 0\n",
-          "timeout": 5000
-        }
-      ]
-    }
-  ],
-  "UserPromptSubmit": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Check for accessibility keywords and inject reminder\n\nPROMPT=\"$1\"\n\n# If user is working on UI/templates and doesn't mention accessibility\nif [[ \"$PROMPT\" == *\"template\"* || \"$PROMPT\" == *\"form\"* || \"$PROMPT\" == *\"button\"* || \"$PROMPT\" == *\"modal\"* ]] && \\\n   [[ \"$PROMPT\" != *\"accessibility\"* && \"$PROMPT\" != *\"a11y\"* && \"$PROMPT\" != *\"WCAG\"* ]]; then\n  echo \"💡 Reminder: Consider accessibility (WCAG 2.1 AA) for UI components\"\n  echo \"   Use Moodle A11Y Specialist agent for validation\"\nfi\n\nexit 0\n",
-          "timeout": 5000
-        }
-      ]
-    }
-  ]
+  "description": "Moodle Dev Pro hooks for code standards and accessibility validation",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git commit:*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "#!/bin/bash\necho '🔍 Running pre-commit checks...'\nif [ -f 'version.php' ]; then\n  if command -v vendor/bin/phpcs &> /dev/null; then\n    echo '  → Running PSR-12/Moodle code standards check...'\n    vendor/bin/phpcs --standard=moodle . --extensions=php || {\n      echo '❌ Code standards violations detected!'\n      exit 2\n    }\n    echo '  ✓ Code standards: PASSED'\n  fi\nfi\necho '✅ Pre-commit checks completed'\nexit 0\n",
+            "timeout": 60000
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "#!/bin/bash\necho '🚀 Moodle Dev Pro Plugin Active'\necho ''\necho 'Available Commands:'\necho '  /m:implement - Feature implementation with PSR-12 compliance'\necho '  /m:troubleshoot - Issue diagnosis with GitHub integration'\necho '  /m:git - Git workflow with Moodle conventions'\necho '  /m:task - Complex task management'\necho '  /m:test - PHPUnit, Behat, code standards testing'\necho ''\nexit 0\n",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
 }

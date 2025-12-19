@@ -1,36 +1,28 @@
 {
-  "SessionStart": [
-    {
-      "matcher": "*",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Plugin Dev Toolkit - Session Start\nif [ -f \".claude-plugin/plugin.json\" ]; then\n  PLUGIN_NAME=$(grep -o '\"name\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' .claude-plugin/plugin.json | head -1 | sed 's/.*\"\\([^\"]*\\)\"$/\\1/')\n  echo \"Plugin context detected: $PLUGIN_NAME\"\n  echo \"Available commands: /plugin-dev:scaffold, /plugin-dev:validate, /plugin-dev:test, /plugin-dev:publish\"\nfi\nexit 0\n",
-          "timeout": 3000
-        }
-      ]
-    }
-  ],
-  "PostToolUse": [
-    {
-      "matcher": "Write:**/plugin.json",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Validate plugin.json after write\nFILE=\"$CLAUDE_TOOL_ARG_FILE_PATH\"\nif [[ \"$FILE\" == *\"plugin.json\" ]] && [ -f \"$FILE\" ]; then\n  # Check if valid JSON\n  if ! python3 -c \"import json; json.load(open('$FILE'))\" 2>/dev/null; then\n    echo \"Warning: plugin.json may have invalid JSON syntax\"\n  fi\nfi\nexit 0\n",
-          "timeout": 2000
-        }
-      ]
-    },
-    {
-      "matcher": "Write:**/commands/*.md",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\n# Validate command file frontmatter\nFILE=\"$CLAUDE_TOOL_ARG_FILE_PATH\"\nif [[ \"$FILE\" == *.md ]] && [ -f \"$FILE\" ]; then\n  # Check for frontmatter\n  if ! head -1 \"$FILE\" | grep -q '^---'; then\n    echo \"Warning: Command file missing YAML frontmatter (should start with ---)\"\n  fi\nfi\nexit 0\n",
-          "timeout": 2000
-        }
-      ]
-    }
-  ]
+  "description": "Plugin Dev toolkit hooks for plugin validation",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "#!/bin/bash\nif [ -f '.claude-plugin/plugin.json' ]; then\n  echo 'Plugin context detected'\n  echo 'Available commands: /plugin-dev:scaffold, /plugin-dev:validate, /plugin-dev:test'\nfi\nexit 0\n",
+            "timeout": 3000
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write:**/plugin.json",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "#!/bin/bash\nFILE=\"$CLAUDE_TOOL_ARG_FILE_PATH\"\nif [[ \"$FILE\" == *'plugin.json' ]] && [ -f \"$FILE\" ]; then\n  if ! python3 -c \"import json; json.load(open('$FILE'))\" 2>/dev/null; then\n    echo 'Warning: plugin.json may have invalid JSON syntax'\n  fi\nfi\nexit 0\n",
+            "timeout": 2000
+          }
+        ]
+      }
+    ]
+  }
 }
