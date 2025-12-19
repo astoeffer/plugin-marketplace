@@ -1,0 +1,9 @@
+{
+  "name": "plugin-builder",
+  "version": "1.0.0",
+  "description": "Claude Code plugin development toolkit - validates structure, generates manifests, creates skills/commands/agents",
+  "author": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@stoffer.de"
+  }
+}
