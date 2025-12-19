@@ -42,22 +42,6 @@
       "keywords": ["server", "docker", "monitoring", "devops", "moodle"]
     },
     {
-      "name": "plugin-forge",
-      "source": "./plugins/plugin-forge",
-      "description": "Meta-plugin for creating, validating, and testing Claude Code plugins",
-      "version": "1.0.0",
-      "strict": false,
-      "keywords": ["plugin", "scaffolding", "validation", "development"]
-    },
-    {
-      "name": "plugin-dev",
-      "source": "./plugins/plugin-dev",
-      "description": "Comprehensive toolkit for creating, validating, and managing Claude Code plugins",
-      "version": "1.0.0",
-      "strict": false,
-      "keywords": ["plugin", "development", "scaffolding", "validation", "testing", "marketplace"]
-    },
-    {
       "name": "plugin-builder",
       "source": "./plugins/plugin-builder",
       "description": "Claude Code plugin development toolkit - validates structure, generates manifests, creates skills/commands/agents",

@@ -1,9 +1,0 @@
-{
-  "name": "plugin-forge",
-  "version": "1.0.0",
-  "description": "Meta-plugin for creating, validating, and testing Claude Code plugins",
-  "author": {
-    "name": "Andreas Stöffer",
-    "email": "andreas@stoffer.de"
-  }
-}

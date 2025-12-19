@@ -1,9 +1,0 @@
-{
-  "name": "plugin-dev",
-  "version": "1.0.0",
-  "description": "Comprehensive toolkit for creating, validating, and managing Claude Code plugins",
-  "author": {
-    "name": "Andreas Stöffer",
-    "email": "andreas@stoffer.de"
-  }
-}
