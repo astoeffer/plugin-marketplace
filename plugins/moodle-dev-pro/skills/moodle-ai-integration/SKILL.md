@@ -1,3 +1,8 @@
+---
+name: moodle-ai-integration
+description: Integrate with Moodle AI Subsystem (4.5+). Create custom Actions, Providers, and Placements for AI-powered features.
+---
+
 # Moodle AI Integration Skill
 
 Integrate with Moodle's AI Subsystem (4.5+).

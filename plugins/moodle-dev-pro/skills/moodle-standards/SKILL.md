@@ -1,3 +1,8 @@
+---
+name: moodle-standards
+description: Apply Moodle coding standards (PSR-12 with exceptions) to PHP code. Validates style, naming conventions, PHPDoc, and type hints.
+---
+
 # Moodle Standards Skill
 
 Apply Moodle coding standards (PSR-12 + exceptions) to PHP code.

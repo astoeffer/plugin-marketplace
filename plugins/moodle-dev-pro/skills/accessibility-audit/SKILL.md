@@ -1,3 +1,8 @@
+---
+name: accessibility-audit
+description: Audit code for WCAG 2.1 AA and EN 301 549 compliance. Checks keyboard navigation, ARIA usage, color contrast, forms, and media accessibility.
+---
+
 # Accessibility Audit Skill
 
 Audit code for WCAG 2.1 AA and EN 301 549 compliance.
