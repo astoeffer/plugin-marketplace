@@ -1,0 +1,61 @@
+{
+  "name": "astoeffer-dev-plugins",
+  "owner": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@stoffer.de"
+  },
+  "metadata": {
+    "description": "Development plugins for Moodle, AI applications, and GPU cluster development",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "moodle-dev-pro",
+      "source": "./plugins/moodle-dev-pro",
+      "description": "Comprehensive Moodle plugin development with PSR-12, accessibility, AI subsystem, Docker multi-version support",
+      "version": "2.0.0",
+      "strict": false,
+      "keywords": ["moodle", "php", "lms", "accessibility", "ai", "psr-12", "wcag"]
+    },
+    {
+      "name": "ai-app-dev",
+      "source": "./plugins/ai-app-dev",
+      "description": "AI application development with PocketFlow, LLM integration, and agent patterns",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["ai", "llm", "agents", "pocketflow", "python", "chatbot", "gpu"]
+    },
+    {
+      "name": "moodle-admin",
+      "source": "./plugins/moodle-admin",
+      "description": "Moodle administration, webservices, reporting, and analytics",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["moodle", "admin", "webservices", "reporting", "analytics"]
+    },
+    {
+      "name": "server-ops",
+      "source": "./plugins/server-ops",
+      "description": "Server administration, Docker automation, monitoring for Moodle environments",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["server", "docker", "monitoring", "devops", "moodle"]
+    },
+    {
+      "name": "plugin-forge",
+      "source": "./plugins/plugin-forge",
+      "description": "Meta-plugin for creating, validating, and testing Claude Code plugins",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["plugin", "scaffolding", "validation", "development"]
+    },
+    {
+      "name": "plugin-dev",
+      "source": "./plugins/plugin-dev",
+      "description": "Comprehensive toolkit for creating, validating, and managing Claude Code plugins",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["plugin", "development", "scaffolding", "validation", "testing", "marketplace"]
+    }
+  ]
+}
