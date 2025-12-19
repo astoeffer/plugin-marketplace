@@ -2,20 +2,8 @@
   "name": "moodle-admin",
   "version": "1.0.0",
   "description": "Moodle administration, webservices, reporting, and analytics",
-  "author": "Andreas Stöffer",
-  "contexts": ["moodle-core", "moodle-admin"],
-  "keywords": ["moodle", "admin", "webservices", "reporting", "analytics"],
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "env": {
-        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
-      }
-    },
-    "serena": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant"]
-    }
+  "author": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@stoffer.de"
   }
 }

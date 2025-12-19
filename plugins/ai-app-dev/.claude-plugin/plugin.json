@@ -2,27 +2,8 @@
   "name": "ai-app-dev",
   "version": "1.0.0",
   "description": "AI application development with PocketFlow, LLM integration, and agent patterns",
-  "author": "Andreas Stöffer",
-  "contexts": ["pocketflow", "frontend", "dgx-h100"],
-  "keywords": ["ai", "llm", "agents", "pocketflow", "python", "chatbot", "gpu"],
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "env": {
-        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
-      }
-    },
-    "tavily": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-tavily"],
-      "env": {
-        "TAVILY_API_KEY": "${TAVILY_API_KEY}"
-      }
-    },
-    "serena": {
-      "command": "uvx",
-      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant"]
-    }
+  "author": {
+    "name": "Andreas Stöffer",
+    "email": "andreas@stoffer.de"
   }
 }
