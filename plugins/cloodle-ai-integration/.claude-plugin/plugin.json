@@ -1,0 +1,9 @@
+{
+  "name": "cloodle-ai-integration",
+  "version": "1.0.0",
+  "description": "AI integration with Weaviate RAG and chatbot widgets",
+  "author": {
+    "name": "Andreas Stoeffer",
+    "email": "andreas@stoeffer.de"
+  }
+}

@@ -48,6 +48,46 @@
       "version": "1.0.0",
       "strict": false,
       "keywords": ["plugin", "development", "validation", "scaffolding", "marketplace"]
+    },
+    {
+      "name": "cloodle-design-system",
+      "source": "./plugins/cloodle-design-system",
+      "description": "UX/design agents and skills for coaching and psychodrama platforms",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["ux", "design", "coaching", "psychodrama", "gestalt"]
+    },
+    {
+      "name": "cloodle-kirby-dev",
+      "source": "./plugins/cloodle-kirby-dev",
+      "description": "Kirby CMS development patterns and Zero One theme",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["kirby", "cms", "zero-one", "theme"]
+    },
+    {
+      "name": "cloodle-moodle-theming",
+      "source": "./plugins/cloodle-moodle-theming",
+      "description": "Moodle Boost Union theming for Cloodle platform",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["moodle", "theme", "boost-union", "cloodle"]
+    },
+    {
+      "name": "cloodle-content-native",
+      "source": "./plugins/cloodle-content-native",
+      "description": "Native content management with Kirby to Book and H5P patterns",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["content", "h5p", "kirby", "book"]
+    },
+    {
+      "name": "cloodle-ai-integration",
+      "source": "./plugins/cloodle-ai-integration",
+      "description": "AI integration with Weaviate RAG and chatbot widgets",
+      "version": "1.0.0",
+      "strict": false,
+      "keywords": ["ai", "weaviate", "rag", "chatbot"]
     }
   ]
 }
